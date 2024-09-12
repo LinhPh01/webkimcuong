@@ -2,26 +2,360 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.bg-header {
+  width: 100%;
+  height: auto;
+  background-image: url("/images/bg-header.jpg");
+}
+.img-hd {
+  max-width: 100%;
+  height: auto;
+}
+.img-hd1 {
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.text-nav {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0px 10px;
+  text-decoration: none;
+  outline: none;
+}
+.responsive-image {
+  max-width: 100%;
+  height: auto; /* Đảm bảo tỉ lệ hình ảnh không bị thay đổi */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.info-area .info-content:after {
+  content: "";
+  box-shadow: -35.355px 35.355px 50px 0px rgba(157, 157, 157, 0.3);
+  position: absolute;
+  right: 100%;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  width: 70px;
+  height: 100%;
+  justify-content: center;
+}
+
+/* conten */
+.info-area .info-thumb {
+  overflow: hidden;
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  .info-area .info-content {
+    text-align: center;
+    padding: 80px 30px 80px 0;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.info-area .info-content {
+  box-shadow: 0px 0px 50px 0px rgba(157, 157, 157, 0.3);
+  position: relative;
+  background: #fff;
+  padding: 60px 40px 60px 0px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (max-width: 575.98px) {
+  .info-area .info-content {
+    margin-top: 30px;
   }
+}
+
+.info-area .info-content:after {
+  content: "";
+  box-shadow: -35.355px 35.355px 50px 0px rgba(157, 157, 157, 0.3);
+  position: absolute;
+  right: 100%;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  width: 70px;
+  height: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .info-area .info-content:after {
+    width: 50px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .info-area .info-content:after {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .info-area .info-content {
+    padding: 30px 30px 30px 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .info-area .info-content {
+    padding: 30px;
+  }
+}
+
+.info-area .info-content h1 {
+  line-height: 1.15em;
+  margin-bottom: 30px;
+}
+
+.info-area .info-content .meta {
+  color: #222;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.info-area .info-left {
+  z-index: 2;
+}
+
+@media (max-width: 800px) {
+  .info-area .info-left {
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+}
+.info-area .info-content {
+  box-shadow: 0px 0px 50px 0px rgba(157, 157, 157, 0.3);
+  position: relative;
+  background: #fff;
+  padding: 60px 40px 60px 0px;
+  padding-top: 60px;
+  padding-right: 40px;
+  padding-bottom: 60px;
+  padding-left: 0px;
+}
+
+/* row */
+.text-mid {
+  text-align: justify !important;
+}
+
+.single-course .sale-btn {
+  background-color: #f53f51;
+  color: #fff;
+  /* width: 140px; */
+  width: fit-content;
+  text-align: center;
+  padding: 10px 20px;
+  position: absolute;
+  top: 10px; /* Khoảng cách từ trên xuống */
+  left: 20%; /* Căn giữa theo chiều ngang */
+  transform: translateX(-50%); /* Dịch chuyển để căn giữa hoàn toàn */
+  z-index: 10; /* Đảm bảo nó hiển thị trên hình ảnh */
+}
+
+.single-course .price {
+  color: #f53f51;
+}
+
+.single-course .details {
+  padding: 5px 30px 30px 30px;
+}
+
+.single-course .details h4 {
+  padding: 20px 0;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.single-course .details h4:hover {
+  color: #f53f51;
+}
+
+.colorr {
+  background-color: #f9889b;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  padding-top: 18px;
+  bottom: 0;
+  z-index: 1000;
+  /* background: rgba(0, 0, 0, 0.8); */
+  background-color: rgb(249, 136, 155);
+  left: -260px;
+  width: 260px;
+  overflow-y: auto;
+  transition: transform 0.4s ease; /* Sử dụng transform để chuyển động mượt mà */
+  transform: translateX(-100%); /* Ẩn thanh điều hướng ra ngoài */
+  transform: translateX(0); /* Di chuyển thanh điều hướng vào màn hình */
+  left: 0; /* Đặt lại left để đảm bảo không có khoảng trống bên trái */
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 260px; /* Bắt đầu từ bên phải của thanh điều hướng */
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Màu đen với opacity */
+  z-index: 999; /* Phía dưới thanh điều hướng */
+  transition: opacity 0.4s ease;
+}
+
+#overlay.hidden {
+  display: none; /* Ẩn overlay khi không cần thiết */
+}
+.button-nav {
+  transform: translateX(400px); /* Di chuyển thanh điều hướng vào màn hình */
+  position: fixed;
+  padding-top: 70px;
+}
+
+#mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  z-index: 999;
+  top: 16px;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  display: none;
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer;
+}
+
+#mobile-nav-toggle i {
+  color: #fff;
+  font-weight: 900;
+}
+
+/* max-width: 800px */
+@media (max-width: 1200px) {
+  #mobile-nav-toggle {
+    display: inline;
+  }
+  #nav-menu-container {
+    display: none;
+  }
+}
+
+#mobile-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#mobile-nav ul li {
+  position: relative;
+}
+
+#mobile-nav ul li a {
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  overflow: hidden;
+  padding: 10px 22px 10px 15px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  outline: none;
+  font-weight: 700;
+}
+
+#mobile-nav ul li a:hover {
+  color: #fff;
+}
+
+#mobile-nav ul li li {
+  padding-left: 30px;
+}
+
+#mobile-nav ul .menu-has-children i {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  padding: 15px;
+  cursor: pointer;
+  color: #fff;
+}
+
+#mobile-nav ul .menu-has-children i.fa-chevron-up {
+  color: #f53f51;
+}
+
+#mobile-nav ul .menu-has-children li a {
+  text-transform: none;
+}
+
+#mobile-nav ul .menu-item-active {
+  color: #f53f51;
+}
+
+* Nav Meu Container */ #nav-menu-container {
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  #nav-menu-container {
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  #nav-menu-container {
+    display: none;
+  }
+}
+
+/* Nav Meu Styling */
+
+.nav-menu a {
+  padding: 0 10px;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.nav-menu > li {
+  margin-left: 10px;
+}
+
+.nav-menu ul {
+  margin: 16px 0 0 0;
+  padding: 10px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  background: #fff;
+}
+
+.nav-menu ul li {
+  transition: 0.3s;
+}
+
+.nav-menu ul li a {
+  padding: 10px;
+  color: #333;
+  transition: 0.3s;
+  display: block;
+  font-size: 12px;
+  text-transform: none;
+}
+
+.nav-menu ul li:hover > a {
+  color: #f53f51;
+}
+
+.nav-menu ul ul {
+  margin: 0;
 }
