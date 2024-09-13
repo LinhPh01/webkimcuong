@@ -11,12 +11,12 @@ const Body6 = () => {
     <section
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="bg-white text-black"
+      className="bg-white text-black flex justify-center items-center"
       id="nhanxet"
     >
       <div className="container">
-        <div className="row d-flex justify-content-center">
-          <div className="menu-content pb-40 col-lg-8">
+        <div className="flex justify-center items-center">
+          <div className="menu-content col-lg-8">
             <div className="title text-center">
               <h1 className="mb-10">Nhận xét từ chuyên gia</h1>
             </div>
@@ -53,13 +53,17 @@ const Body6 = () => {
           <SwiperSlide>
             <div className="">
               <div className="">
-                <div className="">
+                <div className="single-testimonial">
                   <Image
                     height={100}
-                    width={100}
-                    className="mx-auto"
+                    width={400}
                     src="/images/review1.jpg"
                     alt="Review 1"
+                    quality={100}
+                    style={{
+                      filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+                    }}
+                    className="img-hd2 mx-auto object-contain w-full h-auto rounded-full"
                   />
                   <p className="desc">
                     Có thể bạn đang cầm trên tay một cuốn sách quý, vì Cao
@@ -77,11 +81,15 @@ const Body6 = () => {
           <SwiperSlide>
             <div className="">
               <div className="">
-                <div className="">
+                <div className="single-testimonial">
                   <Image
                     height={100}
-                    width={100}
-                    className="mx-auto"
+                    width={400}
+                    quality={100}
+                    style={{
+                      filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+                    }}
+                    className="img-hd2 mx-auto object-contain w-full h-auto rounded-full"
                     src="/images/review2.jpg"
                     alt="Review 2"
                   />
@@ -100,11 +108,15 @@ const Body6 = () => {
           <SwiperSlide>
             <div className="">
               <div className="">
-                <div className="">
+                <div className="single-testimonial">
                   <Image
                     height={100}
-                    width={100}
-                    className="mx-auto"
+                    width={400}
+                    quality={100}
+                    style={{
+                      filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+                    }}
+                    className="img-hd2 mx-auto object-contain w-full h-auto rounded-full"
                     src="/images/review3.jpg"
                     alt="Review 3"
                   />
@@ -124,11 +136,15 @@ const Body6 = () => {
           <SwiperSlide>
             <div className="">
               <div className="">
-                <div className="">
+                <div className="single-testimonial">
                   <Image
                     height={100}
-                    width={100}
-                    className="mx-auto"
+                    width={400}
+                    quality={100}
+                    style={{
+                      filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+                    }}
+                    className="img-hd2 mx-auto object-contain w-full h-auto rounded-full"
                     src="/images/review1.jpg"
                     alt="Review 1"
                   />
@@ -148,11 +164,15 @@ const Body6 = () => {
           <SwiperSlide>
             <div className="">
               <div className="">
-                <div className="">
+                <div className="single-testimonial">
                   <Image
                     height={100}
-                    width={100}
-                    className="mx-auto"
+                    width={400}
+                    quality={100}
+                    style={{
+                      filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+                    }}
+                    className="img-hd2 mx-auto object-contain w-full h-auto rounded-full"
                     src="/images/review2.jpg"
                     alt="Review 2"
                   />
@@ -171,11 +191,15 @@ const Body6 = () => {
           <SwiperSlide>
             <div className="">
               <div className="">
-                <div className="">
+                <div className="single-testimonial">
                   <Image
                     height={100}
-                    width={100}
-                    className="mx-auto"
+                    width={400}
+                    quality={100}
+                    style={{
+                      filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+                    }}
+                    className="img-hd2 mx-auto object-contain w-full h-auto rounded-full"
                     src="/images/review3.jpg"
                     alt="Review 3"
                   />
@@ -193,7 +217,6 @@ const Body6 = () => {
             </div>
           </SwiperSlide>
         </Swiper>
-        ;
       </div>
     </section>
   );

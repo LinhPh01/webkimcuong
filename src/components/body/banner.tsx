@@ -6,12 +6,13 @@ const Banner = () => {
   return (
     <section data-aos="fade-up" data-aos-duration="1000" className="">
       <div className="bg-header">
-        <div className="flex flex-col items-center justify-center py-24 space-x-8 lg:flex lg:flex-row lg:justify-center lg:items-center">
-          <div className="">
-            <div className="video-wrapper">
+        <div className="py-24 space-x-8 flex flex-col justify-center items-center lg:flex lg:flex-row lg:justify-center lg:items-center">
+          <div className="w-full lg:w-auto flex justify-center lg:justify-start">
+            <div className="video-wrapper w-full lg:w-[600px] h-[225px] md:h-[300px] lg:h-[400px]">
               <iframe
-                width="600"
-                height="400"
+                // width="600"
+                // height="400"
+                className="w-full h-full"
                 src="https://www.youtube.com/embed/2xfj1njfcW8"
                 title="YouTube video player"
                 frameBorder="0"
