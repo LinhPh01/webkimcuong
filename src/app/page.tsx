@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main>
       <div className="w-full imga bg-center">
-        <div className="w-full bg-black opacity-80 text-white">
+        <div className="w-full bg-white opacity-80 text-white">
           <Navbar />
           <Banner />
           <Body1 />

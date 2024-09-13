@@ -5,14 +5,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
+import useAOS from "@/utils/aos-init";
 
 const Body2 = () => {
+  useAOS();
   return (
     <section
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
       data-aos-duration="1000"
-      className="flex justify-center items-center  bg-slate-100"
+      className="flex justify-center items-center  bg-slate-100 py-20"
       id="tacgia"
     >
       <div className="container">
@@ -36,7 +38,7 @@ const Body2 = () => {
             disableOnInteraction: false,
           }}
           loop
-          spaceBetween={8}
+          spaceBetween={12}
           breakpoints={{
             320: {
               // Mobile devices
@@ -55,7 +57,7 @@ const Body2 = () => {
           <SwiperSlide>
             <div className="single-course item">
               <Image
-                width={400}
+                width={350}
                 height={400}
                 quality={100}
                 className="img-hd mx-auto "
@@ -82,7 +84,7 @@ const Body2 = () => {
             <div className="single-course item">
               <Image
                 className="img-hd mx-auto "
-                width={400}
+                width={350}
                 height={400}
                 quality={100}
                 style={{
@@ -107,7 +109,7 @@ const Body2 = () => {
             <div className="single-course item">
               <Image
                 className="img-hd mx-auto"
-                width={400}
+                width={350}
                 height={400}
                 quality={100}
                 style={{
@@ -133,7 +135,7 @@ const Body2 = () => {
             <div className="single-course item">
               <Image
                 className="img-hd mx-auto"
-                width={400}
+                width={350}
                 height={400}
                 quality={100}
                 style={{
@@ -159,7 +161,7 @@ const Body2 = () => {
             <div className="single-course item ">
               <Image
                 className="img-hd mx-auto"
-                width={400}
+                width={350}
                 height={400}
                 quality={100}
                 style={{

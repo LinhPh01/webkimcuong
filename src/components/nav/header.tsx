@@ -1,16 +1,37 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { BsSearch } from "react-icons/bs";
 import Image from "next/image";
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup sự kiện khi component bị huỷ
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="bg-header fixed z-50 w-full">
+    <header
+      className={`fixed z-50 w-full transition-all duration-300 ${
+        scrolled ? "bg-header-scrolled" : "bg-header1"
+      }`}
+    >
       <div className="flex items-center justify-between py-3 px-4 md:px-8">
         {!isNavOpen && (
           <div className="logo">
@@ -60,9 +81,9 @@ const Navbar = () => {
             <li>
               <a href="#tacgia">Tác giả</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#sohuu">Sở hữu sách</a>
-            </li>
+            </li> */}
             <li>
               <a href="#nhanxet">Chuyên gia đánh giá</a>
             </li>

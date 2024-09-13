@@ -1,13 +1,19 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import useAOS from "@/utils/aos-init";
 
 const Body7 = () => {
+  useAOS();
   return (
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
       className="py-10 px-2 bg-header flex justify-center items-center"
+      id="loinhan"
+      style={{
+        filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+      }}
     >
       <div className="container">
         <div className="flex flex-col justify-center items-center lg:flex lg:flex-row lg:justify-center lg:items-center">
@@ -121,6 +127,7 @@ const Body7 = () => {
               href="https://traitimkimcuong.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-blue-600"
             >
               https://traitimkimcuong.com
             </a>

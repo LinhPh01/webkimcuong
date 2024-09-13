@@ -1,10 +1,17 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import useAOS from "@/utils/aos-init";
 
 const Body3 = () => {
+  useAOS();
   return (
-    <section data-aos="zoom-in" data-aos-duration="1000" className=" bg-white">
+    <section
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+      className=" bg-white py-20"
+      id="lantoa"
+    >
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-row justify-center items-center">
           <div className="py-8">
@@ -13,7 +20,7 @@ const Body3 = () => {
             </div>
           </div>
         </div>
-        <div className="md:flex md:flex-row md:justify-center pb-60 h-auto px-2 mx-auto">
+        <div className="md:flex md:flex-row md:justify-center h-auto px-2 mx-auto">
           <div className="flex flex-col justify-center items-center bg-slate-50 border-2 border-slate-200">
             <div className="no-padding text-black flex flex-col justify-center items-center">
               <div className="px-8 py-4">

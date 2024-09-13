@@ -5,21 +5,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
+import useAOS from "@/utils/aos-init";
 
 const Body4 = () => {
+  useAOS();
   return (
-    // End price Area
     <section
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
       data-aos-duration="1000"
-      className="pb-20 flex justify-center items-center text-black bg-white"
+      className="py-20 flex justify-center items-center text-slate-700 bg-white"
+      id="tuthien"
     >
       <div className="container" id="tuthien">
         <div className="flex justify-center">
           <div className="menu-content col-lg-9">
             <div className="title text-center">
-              <h1 className="mb-10">Quỹ từ thiện trái tim kim cương</h1>
+              <h1 className="py-10 text-black text-4xl font-bold text-center">
+                Quỹ từ thiện trái tim kim cương
+              </h1>
               <p className="italic">
                 Lợi nhuận bán sách sẽ dành làm từ thiện cho trẻ em nghèo Việt
                 Nam - Ấn Độ

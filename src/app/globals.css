@@ -6,6 +6,20 @@
   width: 100%;
   height: auto;
   background-image: url("/images/bg-header.jpg");
+  background-position: 70% bottom;
+}
+
+.bg-header1 {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  transition: background-image 0.3s ease-in-out;
+}
+
+/* CSS cho nền header khi cuộn */
+.bg-header-scrolled {
+  background-image: url("/images/bg-header.jpg");
+  background-position: 80% bottom;
 }
 .img-hd {
   max-width: 100%;
@@ -21,6 +35,7 @@
   height: 150px;
   object-fit: cover;
 }
+
 .text-nav {
   color: rgb(255, 255, 255);
   font-weight: 400;
@@ -157,7 +172,7 @@
   padding: 10px 20px;
   position: absolute;
   top: 10px; /* Khoảng cách từ trên xuống */
-  left: 20%; /* Căn giữa theo chiều ngang */
+  left: 23%; /* Căn giữa theo chiều ngang */
   transform: translateX(-50%); /* Dịch chuyển để căn giữa hoàn toàn */
   z-index: 10; /* Đảm bảo nó hiển thị trên hình ảnh */
 }
@@ -218,7 +233,7 @@
 }
 .button-nav {
   transform: translateX(400px); /* Di chuyển thanh điều hướng vào màn hình */
-  position: fixed;
+  position: absolute;
   padding-top: 70px;
 }
 
@@ -377,5 +392,3 @@
 .single-testimonial .desc {
   padding: 30px 0px;
 }
-
-

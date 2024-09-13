@@ -1,13 +1,19 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import useAOS from "@/utils/aos-init";
 
 const Body5 = () => {
+  useAOS();
   return (
     <section
       data-aos="zoom-in-up"
       data-aos-duration="1000"
-      className="relative px-2 bg-header text-black"
+      className="relative px-2 bg-header text-black py-20"
+      id="sohuu"
+      style={{
+        filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+      }}
     >
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center items-center">
@@ -34,7 +40,7 @@ const Body5 = () => {
                       Email
                     </label>
                     <input
-                      className="appearance-none block w-full bg-white text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                      className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-500"
                       id="email"
                       type="text"
                       name="Email"
@@ -55,7 +61,7 @@ const Body5 = () => {
                       Số điện thoại
                     </label>
                     <input
-                      className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-500"
                       id="phone"
                       type="text"
                       name="Số điện thoại"
@@ -76,7 +82,7 @@ const Body5 = () => {
                       Họ và tên
                     </label>
                     <input
-                      className="appearance-none block w-full bg-white text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                      className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-500"
                       id="name"
                       type="text"
                       name="Họ và tên"
@@ -100,7 +106,7 @@ const Body5 = () => {
                       Địa chỉ nhận hàng
                     </label>
                     <input
-                      className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-500"
                       id="diachinhanhang"
                       type="text"
                       name="Địa chỉ nhận hàng"
@@ -124,7 +130,7 @@ const Body5 = () => {
                     <textarea
                       name="Lời nhắn"
                       id="loinhan"
-                      className="resize rounded-md w-full bg-white text-gray-700 border border-gray-200 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="resize rounded-md w-full bg-white text-gray-700 border border-gray-200 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-500"
                     />
                   </div>
                 </div>
@@ -141,7 +147,7 @@ const Body5 = () => {
 
                 <button
                   id="id-btn-form"
-                  className="btn-form ml-1 rounded px-4 py-3 uppercase hover:bg-pink-500"
+                  className="bg-white text-pink-500 font-bold ml-1 rounded px-4 py-3 uppercase hover:bg-pink-500 hover:text-white"
                   type="submit"
                 >
                   Xác nhận
@@ -151,7 +157,7 @@ const Body5 = () => {
             </div>
             <div className="rightt col-md-6 mt-4">
               <Image
-                width={600}
+                width={300}
                 height={200}
                 src="/images/sach-form.png"
                 alt="Sách"

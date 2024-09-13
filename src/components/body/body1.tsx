@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import useAOS from "@/utils/aos-init";
 
 const Body1 = () => {
   const [showMore, setShowMore] = useState(false);
@@ -8,11 +9,13 @@ const Body1 = () => {
   const toggleShowMore = () => {
     setShowMore(!showMore);
   };
+  useAOS();
   return (
     <section
       data-aos="fade-down"
       data-aos-duration="1000"
-      className="mt-100 pb-20 info-area bg-white flex flex-col justify-center items-center"
+      className="mt-100 py-20 info-area bg-white flex flex-col justify-center items-center"
+      id="loitua"
     >
       <h1 className="mb-10 text-center text-black text-4xl pt-8 font-bold">
         Lời tác giả
@@ -22,7 +25,7 @@ const Body1 = () => {
           <div className="col-lg-6 col-md-12 text-center no-padding info-left bg-white">
             <div className="flex">
               <Image
-                width={800}
+                width={500}
                 height={1080}
                 src="/images/tac gia sach.jpg"
                 className="img-hd"

@@ -5,20 +5,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
+import useAOS from "@/utils/aos-init";
 
 const Body6 = () => {
+  useAOS();
   return (
     <section
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="bg-white text-black flex justify-center items-center"
+      className="bg-white text-slate-700 flex justify-center items-center py-20"
       id="nhanxet"
     >
       <div className="container">
         <div className="flex justify-center items-center">
           <div className="menu-content col-lg-8">
-            <div className="title text-center">
-              <h1 className="mb-10">Nhận xét từ chuyên gia</h1>
+            <div className="title text-black text-center text-4xl font-bold">
+              <h1 className="py-10">Nhận xét từ chuyên gia</h1>
             </div>
           </div>
         </div>
@@ -34,7 +36,7 @@ const Body6 = () => {
             disableOnInteraction: false,
           }}
           loop
-          spaceBetween={8}
+          spaceBetween={4}
           breakpoints={{
             320: {
               // Mobile devices
