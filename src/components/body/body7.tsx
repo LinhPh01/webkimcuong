@@ -10,7 +10,6 @@ const Body7 = () => {
       data-aos="fade-up"
       data-aos-duration="1000"
       className="py-10 px-2 bg-header flex justify-center items-center"
-      id="loinhan"
       style={{
         filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
       }}
@@ -32,7 +31,10 @@ const Body7 = () => {
           </div>
 
           <div className="col-md-8 px-4 mt-5">
-            <div className="text-5xl text-center text-white font-bold uppercase">
+            <div
+              className="text-5xl text-center text-white font-bold uppercase"
+              id="loinhan"
+            >
               Mua sách online
             </div>
             <p className=" text-black px-4 py-4">

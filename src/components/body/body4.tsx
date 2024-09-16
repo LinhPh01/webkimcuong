@@ -15,13 +15,15 @@ const Body4 = () => {
       data-aos-anchor-placement="top-bottom"
       data-aos-duration="1000"
       className="py-20 flex justify-center items-center text-slate-700 bg-white"
-      id="tuthien"
     >
-      <div className="container" id="tuthien">
+      <div className="container">
         <div className="flex justify-center">
           <div className="menu-content col-lg-9">
             <div className="title text-center">
-              <h1 className="py-10 text-black text-4xl font-bold text-center">
+              <h1
+                className="py-10 text-black text-4xl font-bold text-center"
+                id="tuthien"
+              >
                 Quỹ từ thiện trái tim kim cương
               </h1>
               <p className="italic">

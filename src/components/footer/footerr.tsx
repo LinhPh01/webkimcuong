@@ -5,7 +5,9 @@ import Image from "next/image";
 const Footerr = () => {
   return (
     <footer
-      style={{ backgroundColor: "rgb(41, 41, 41)" }}
+      style={{
+        backgroundColor: "#131313",
+      }}
       className="pt-9 pb-14 relative"
     >
       <div className="flex flex-col justify-center items-center">
@@ -48,6 +50,10 @@ const Footerr = () => {
                 alt={item.imgAlt}
                 width={item.width}
                 height={item.height}
+                quality={100}
+                style={{
+                  filter: "brightness(0.9) contrast(1.2) saturate(1.3)",
+                }}
               />
             </a>
           ))}

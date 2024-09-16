@@ -14,13 +14,14 @@ const Body6 = () => {
       data-aos="fade-up"
       data-aos-duration="1000"
       className="bg-white text-slate-700 flex justify-center items-center py-20"
-      id="nhanxet"
     >
       <div className="container">
         <div className="flex justify-center items-center">
           <div className="menu-content col-lg-8">
             <div className="title text-black text-center text-4xl font-bold">
-              <h1 className="py-10">Nhận xét từ chuyên gia</h1>
+              <h1 className="py-10" id="nhanxet">
+                Nhận xét từ chuyên gia
+              </h1>
             </div>
           </div>
         </div>

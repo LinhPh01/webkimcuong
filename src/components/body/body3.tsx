@@ -10,13 +10,12 @@ const Body3 = () => {
       data-aos="zoom-in"
       data-aos-duration="1000"
       className=" bg-white py-20"
-      id="lantoa"
     >
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-row justify-center items-center">
           <div className="py-8">
             <div className="title text-center text-black font-bold text-4xl">
-              <h1>Giúp sức lan tỏa cuốn sách</h1>
+              <h1 id="lantoa">Giúp sức lan tỏa cuốn sách</h1>
             </div>
           </div>
         </div>

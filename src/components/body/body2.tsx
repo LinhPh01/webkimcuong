@@ -15,13 +15,14 @@ const Body2 = () => {
       data-aos-anchor-placement="top-bottom"
       data-aos-duration="1000"
       className="flex justify-center items-center  bg-slate-100 py-20"
-      id="tacgia"
     >
       <div className="container">
         <div className="flex justify-center items-center">
           <div className="menu-content col-lg-9">
             <div className="title text-center text-black mb-10 pt-8">
-              <h1 className="text-4xl font-bold">Về tác giả</h1>
+              <h1 className="text-4xl font-bold" id="tacgia">
+                Về tác giả
+              </h1>
               <p>Cao Thị Thanh, sinh năm 1993, tại Thanh Hóa</p>
             </div>
           </div>

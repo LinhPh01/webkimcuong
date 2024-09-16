@@ -15,9 +15,11 @@ const Body1 = () => {
       data-aos="fade-down"
       data-aos-duration="1000"
       className="mt-100 py-20 info-area bg-white flex flex-col justify-center items-center"
-      id="loitua"
     >
-      <h1 className="mb-10 text-center text-black text-4xl pt-8 font-bold">
+      <h1
+        className="mb-10 text-center text-black text-4xl pt-8 font-bold"
+        id="loitua"
+      >
         Lời tác giả
       </h1>
       <div className="container">
@@ -25,7 +27,7 @@ const Body1 = () => {
           <div className="col-lg-6 col-md-12 text-center no-padding info-left bg-white">
             <div className="flex">
               <Image
-                width={500}
+                width={400}
                 height={1080}
                 src="/images/tac gia sach.jpg"
                 className="img-hd"
@@ -36,7 +38,7 @@ const Body1 = () => {
               />
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 lg:w-3/4 no-padding info-right bg-white">
+          <div className="col-lg-6 col-md-12 lg:w-1/2 no-padding info-right bg-white">
             <div className="info-content text-mid flex flex-col justify-center items-center">
               <h2 className="pb-30 text-black text-4xl pl-6">
                 Tác giả Cao Thanh
