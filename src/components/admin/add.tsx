@@ -9,34 +9,10 @@ import "react-quill/dist/quill.snow.css";
 
 const { TextArea } = Input;
 
-interface EditProps {
-  slug: {
-    nameVN: string;
-    thumbnail: string;
-    keyWord: string;
-    metaDes: string;
-    shortDesc: string;
-    content: string;
-    slug: string;
-    id: number;
-  };
-  onUpdate: (post: {
-    id: number;
-    nameVN: string;
-    thumbnail: string;
-    keyWord: string;
-    metaDes: string;
-    shortDesc: string;
-    content: string;
-    slug: string;
-  }) => void;
-}
-
-const Edit: React.FC<EditProps> = ({ slug, onUpdate }) => {
-  // Thêm prop postId để lấy ID bài viết
+const Add = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [nameVN, setNameVN] = useState("");
-  const [slugState, setSlugState] = useState("");
+  const [slug, setSlug] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [keyWord, setKeyWord] = useState("");
   const [metaDes, setMetaDes] = useState("");
@@ -100,11 +76,7 @@ const Edit: React.FC<EditProps> = ({ slug, onUpdate }) => {
     setContent(value);
   };
 
-  const generateSlug = (text: string | undefined) => {
-    if (!text) {
-      return ""; // Trả về chuỗi rỗng nếu text là undefined hoặc null
-    }
-
+  const generateSlug = (text: string) => {
     return text
       .toLowerCase()
       .trim()
@@ -112,104 +84,45 @@ const Edit: React.FC<EditProps> = ({ slug, onUpdate }) => {
       .replace(/\s+/g, "-");
   };
 
-  // Cập nhật slug khi nameVN thay đổi
   useEffect(() => {
-    if (nameVN) {
-      setSlugState(generateSlug(nameVN));
-    }
+    setSlug(generateSlug(nameVN));
   }, [nameVN]);
 
-  useEffect(() => {
-    console.log("Received slug:", slug); // Kiểm tra giá trị slug
-    if (slug) {
-      setNameVN(slug.nameVN);
-      setThumbnail(slug.thumbnail);
-      setKeyWord(slug.keyWord);
-      setMetaDes(slug.metaDes);
-      setShortDesc(slug.shortDesc);
-      setContent(slug.content);
-      setSlugState(slug.slug);
-    }
-  }, [slug]);
-
-  useEffect(() => {
-    const fetchPostData = async () => {
-      console.log("slug ", slug.slug);
-      try {
-        const response = await fetch(
-          `https://test.devtest.asia/api/v1/baiviet/${slug.slug}`
-        );
-        if (!response.ok) {
-          throw new Error(`Failed to fetch post: ${response.status}`);
-        }
-        const postData = await response.json();
-        console.log("Fetched post data:", postData); // Kiểm tra phản hồi
-        setNameVN(postData.name_vn);
-        setSlugState(postData.slug);
-        setThumbnail(postData.thumbnail);
-        setKeyWord(postData.key_word);
-        setMetaDes(postData.meta_des);
-        setShortDesc(postData.mota_vn);
-        setContent(postData.noidung_vn);
-      } catch (error) {
-        console.error("Lỗi khi lấy dữ liệu bài viết:", error);
-        message.error("Lỗi khi lấy dữ liệu bài viết.");
-      }
-    };
-
-    if (isModalOpen && slug.slug) {
-      fetchPostData();
-    }
-  }, []);
-
   const handleSubmit = async () => {
+    if (!nameVN || !keyWord || !metaDes || !content || !thumbnail) {
+      message.error("Vui lòng điền đầy đủ thông tin và chọn ảnh.");
+      return;
+    }
+
     setLoading(true);
+    const formData = new FormData();
+    formData.append("name_vn", nameVN);
+    formData.append("slug", slug);
+    formData.append("thumbnail", thumbnail);
+    formData.append("key_word", keyWord);
+    formData.append("meta_des", metaDes);
+    formData.append("mota_vn", shortDesc);
+    formData.append("noidung_vn", content);
+    console.log("Form Data:", formData);
+
     try {
-      console.log("Submitting:", {
-        nameVN,
-        slug: slugState,
-        thumbnail,
-        keyWord,
-        metaDes,
-        shortDesc,
-        content,
-      }); // Kiểm tra giá trị trước khi gửi
-      const response = await fetch(
-        `https://test.devtest.asia/api/v1/baiviet/${slug.id}`,
-        {
-          method: "PUT",
-          body: JSON.stringify({
-            name_vn: nameVN,
-            slug: slugState,
-            thumbnail: thumbnail,
-            key_word: keyWord,
-            mota_vn: metaDes,
-            meta_des: shortDesc,
-            noidung_vn: content,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Error updating post");
-      }
-      onUpdate({
-        id: slug.id, // Sử dụng slug.id
-        nameVN,
-        thumbnail,
-        keyWord,
-        metaDes,
-        shortDesc,
-        content,
-        slug: slugState, // Truyền slug đã cập nhật
+      const response = await fetch("https://test.devtest.asia/api/v1/baiviet", {
+        method: "POST",
+        body: formData,
       });
-      message.success("Cập nhật bài viết thành công!");
-      setIsModalOpen(false);
+
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.message || "Đã xảy ra lỗi khi thêm bài viết.");
+      }
+
+      const result = await response.json();
+      console.log(result);
+      message.success("Thêm bài viết thành công!");
+      handleCancel();
     } catch (error) {
-      console.error("Lỗi khi cập nhật bài viết:", error);
-      message.error("Lỗi khi cập nhật bài viết.");
+      console.error("Error adding post:", error);
+      message.error("Đã xảy ra lỗi khi thêm bài viết.");
     } finally {
       setLoading(false);
     }
@@ -222,7 +135,7 @@ const Edit: React.FC<EditProps> = ({ slug, onUpdate }) => {
   const handleCancel = () => {
     setIsModalOpen(false);
     setNameVN("");
-    setSlugState("");
+    setSlug("");
     setThumbnail("");
     setKeyWord("");
     setMetaDes("");
@@ -233,10 +146,10 @@ const Edit: React.FC<EditProps> = ({ slug, onUpdate }) => {
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Edit
+        Thêm mới
       </Button>
       <Modal
-        title="Chỉnh sửa bài viết"
+        title="Thêm bài viết"
         open={isModalOpen}
         onCancel={handleCancel}
         footer={[
@@ -249,7 +162,7 @@ const Edit: React.FC<EditProps> = ({ slug, onUpdate }) => {
             onClick={handleSubmit}
             loading={loading}
           >
-            Cập nhật
+            Thêm
           </Button>,
         ]}
         width={1400}
@@ -259,14 +172,11 @@ const Edit: React.FC<EditProps> = ({ slug, onUpdate }) => {
             <TextArea
               rows={4}
               value={nameVN}
-              onChange={(e) => {
-                setNameVN(e.target.value); // Cập nhật nameVN
-                setSlugState(generateSlug(e.target.value)); // Cập nhật slug dựa trên nameVN
-              }}
+              onChange={(e) => setNameVN(e.target.value)}
             />
           </Card>
           <Card title="Slug" bordered={true} style={{ width: 600 }}>
-            <Input value={slugState} readOnly />
+            <Input value={slug} readOnly />
           </Card>
           <Card
             title="Chọn ảnh bài viết"
@@ -361,4 +271,4 @@ const Edit: React.FC<EditProps> = ({ slug, onUpdate }) => {
   );
 };
 
-export default Edit;
+export default Add;

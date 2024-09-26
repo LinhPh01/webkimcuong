@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["test.devtest.asia"], // Thêm domain của bạn vào đây
+  },
   optimizeFonts: false, // Example of disabling font optimization
   optimizeImages: false, // Example of disabling image optimization
   cssMinify: false, // Custom property if cssnano is an issue, but not directly applicable in Next.js

@@ -1,10 +1,12 @@
 "use client";
+
 import React, { useState } from "react";
 import TablePage from "./table";
 import TablePage1 from "./table1";
 
 const Dashboard = () => {
   const [selectedMenu, setSelectedMenu] = useState<string>("posts");
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
@@ -36,14 +38,6 @@ const Dashboard = () => {
                 Quản lí trang chủ
               </a>
             </li>
-            {/* <li className="mb-2">
-              <a
-                href="#"
-                className="block p-2 bg-white rounded-lg shadow-md hover:bg-gray-200 transition"
-              >
-                Laptop Management
-              </a>
-            </li> */}
           </ul>
         </aside>
 

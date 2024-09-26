@@ -38,9 +38,10 @@ const Navbar = () => {
           <a href="/">
             <Image
               src="/images/Logo Trai Tim Kim Cuong.png"
-              width={150}
-              height={100}
+              width={100} // Kích thước có thể điều chỉnh
+              height={100} // Kích thước có thể điều chỉnh
               alt="Logo"
+              className="bg-logo"
             />
           </a>
         </div>

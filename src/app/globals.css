@@ -42,6 +42,10 @@
   background-image: url("/images/bg-header.jpg");
   background-position: 70% bottom;
 }
+.bg-logo {
+  width: 100%;
+  height: auto;
+}
 .bg-new {
   width: 100%;
   height: auto;
